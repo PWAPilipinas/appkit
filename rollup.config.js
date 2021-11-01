@@ -9,7 +9,8 @@ const copyConfig = {
       { src: 'src/assets', dest: 'dist' },
       { src: 'src/index.html', dest: 'dist' },
       { src: 'src/manfest.webmanifest', dest: 'dist' },
-      { src: 'src/styles.css', dest: 'dist' }
+      { src: 'src/styles.css', dest: 'dist' },
+      { src: 'src/favicon.ico', dest: 'dist' }
     ],
 };
 
@@ -23,11 +24,7 @@ const config = {
         // copyAndWatch('src/index.html', 'index.html'),
         minifyHTML(),
         copy(copyConfig),
-        tsc({
-            "compilerOptions": {
-                "experimentalDecorators": true
-            }
-        }),
+        tsc(),
         nodeResolve()
     ],
     preserveEntrySignatures: false
